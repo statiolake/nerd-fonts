@@ -26,9 +26,9 @@ import subprocess
 import json
 
 try:
-  import configparser
+  import ConfigParser
 except ImportError:
-  sys.exit(projectName + ": configparser module is probably not installed. Try `pip install configparser` or equivalent")
+  sys.exit(projectName + ": ConfigParser module is probably not installed. Try `pip install ConfigParser` or equivalent")
 
 
 try:
@@ -74,7 +74,7 @@ parser.add_argument('-ext', '--extension', type=str, nargs='?', dest='extension'
 parser.add_argument('-out', '--outputdir', type=str, nargs='?', dest='outputdir', help='The directory to output the patched font file to', default=".")
 args = parser.parse_args()
 
-config = configparser.ConfigParser(empty_lines_in_values=False, allow_no_value=True)
+config = ConfigParser.ConfigParser()
 
 __dir__ = os.path.dirname(os.path.abspath(__file__))
 minimumVersion = 20141231
